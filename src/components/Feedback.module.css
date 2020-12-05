@@ -1,0 +1,31 @@
+.title {
+  text-align: center;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  padding: 6px 10px;
+  cursor: pointer;
+  border: none;
+  outline-style: none;
+  border-radius: 4px;
+  background-color: cornflowerblue;
+}
+
+li {
+  list-style: none;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 600;
+}
+.message {
+  margin-left: 20px;
+  font-size: 18px;
+  color: rgb(231, 137, 133);
+}
