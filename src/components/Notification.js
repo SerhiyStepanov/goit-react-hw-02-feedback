@@ -1,9 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import s from "./Feedback.module.css";
 
 export default function Notification({ message }) {
-  return <p className={s.message}>{message}</p>;
+  return (
+    <Fragment>
+      <p className={s.message}>{message}</p>
+    </Fragment>
+  );
 }
 
 Notification.propTypes = {

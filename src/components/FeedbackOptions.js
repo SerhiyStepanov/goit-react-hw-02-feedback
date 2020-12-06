@@ -28,6 +28,6 @@ export default function FeedbackOptions({
 
 FeedbackOptions.propTypes = {
   incrementGood: PropTypes.func,
-  cincrementGood: PropTypes.func,
+  incrementNeutral: PropTypes.func,
   incrementBad: PropTypes.func,
 };
