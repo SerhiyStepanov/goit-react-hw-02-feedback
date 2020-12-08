@@ -35,22 +35,23 @@ export default class App extends Component {
     });
   };
 
+  increment = (e) => {
+    this.setState((prevState) => {
+      return {
+        [this.state]: prevState + 1,
+      };
+    });
+  };
+
   countTotalFeedback = () => {
-    const values = Object.values(this.state);
-    let total = 0;
-    for (const value of values) {
-      total += value;
-    }
-    return total;
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
   };
 
   countPositiveFeedbackPercentage = () => {
-    const values = Object.values(this.state);
-    let total = 0;
-    for (const value of values) {
-      total += value;
-    }
-    return Math.round(Number.parseFloat(100 / total) * [this.state.good]);
+    const { good, neutral, bad } = this.state;
+    const total = good + neutral + bad;
+    return Math.round(Number.parseFloat(100 / total) * good);
   };
 
   render() {
