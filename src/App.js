@@ -34,7 +34,7 @@ export default class App extends Component {
     return (
       <Fragment>
         <Section title="Please leave feedback">
-          <FeedbackOptions increment={this.increment} />
+          <FeedbackOptions onLeaveFeedback={this.increment} />
         </Section>
 
         <Section title="Statistics">
