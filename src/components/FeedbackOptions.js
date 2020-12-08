@@ -2,23 +2,24 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import s from "./Feedback.module.css";
 
-export default function FeedbackOptions({
-  incrementGood,
-  incrementNeutral,
-  incrementBad,
-}) {
+export default function FeedbackOptions({ increment }) {
   return (
     <Fragment>
       <div className={s.btnContainer}>
-        <button type="button" className={s.btn} onClick={incrementGood}>
+        <button type="button" name="good" className={s.btn} onClick={increment}>
           good
         </button>
 
-        <button type="button" className={s.btn} onClick={incrementNeutral}>
+        <button
+          type="button"
+          name="neutral"
+          className={s.btn}
+          onClick={increment}
+        >
           neutral
         </button>
 
-        <button type="button" className={s.btn} onClick={incrementBad}>
+        <button type="button" name="bad" className={s.btn} onClick={increment}>
           bad
         </button>
       </div>
@@ -27,7 +28,5 @@ export default function FeedbackOptions({
 }
 
 FeedbackOptions.propTypes = {
-  incrementGood: PropTypes.func,
-  incrementNeutral: PropTypes.func,
-  incrementBad: PropTypes.func,
+  increment: PropTypes.func,
 };

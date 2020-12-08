@@ -11,34 +11,10 @@ export default class App extends Component {
     bad: 0,
   };
 
-  incrementGood = (e) => {
-    this.setState((prevState) => {
-      return {
-        good: prevState.good + 1,
-      };
-    });
-  };
-
-  incrementNeutral = (e) => {
-    this.setState((prevState) => {
-      return {
-        neutral: prevState.neutral + 1,
-      };
-    });
-  };
-
-  incrementBad = (e) => {
-    this.setState((prevState) => {
-      return {
-        bad: prevState.bad + 1,
-      };
-    });
-  };
-
   increment = (e) => {
     this.setState((prevState) => {
       return {
-        [this.state]: prevState + 1,
+        [e.target.name]: prevState[e.target.name] + 1,
       };
     });
   };
@@ -58,11 +34,7 @@ export default class App extends Component {
     return (
       <Fragment>
         <Section title="Please leave feedback">
-          <FeedbackOptions
-            incrementGood={this.incrementGood}
-            incrementNeutral={this.incrementNeutral}
-            incrementBad={this.incrementBad}
-          />
+          <FeedbackOptions increment={this.increment} />
         </Section>
 
         <Section title="Statistics">
