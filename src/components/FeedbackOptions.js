@@ -38,5 +38,5 @@ export default function FeedbackOptions({ onLeaveFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-  increment: PropTypes.func,
+  onLeaveFeedback: PropTypes.func,
 };
