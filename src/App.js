@@ -34,7 +34,10 @@ export default class App extends Component {
     return (
       <Fragment>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.increment} />
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.increment}
+          />
         </Section>
 
         <Section title="Statistics">

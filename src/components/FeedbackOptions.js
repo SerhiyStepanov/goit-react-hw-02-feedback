@@ -1,42 +1,33 @@
-import React, { Fragment } from "react";
+import React from "react";
+import shortid from "shortid";
 import PropTypes from "prop-types";
 import s from "./Feedback.module.css";
 
-export default function FeedbackOptions({ onLeaveFeedback }) {
+export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
-    <Fragment>
-      <div className={s.btnContainer}>
-        <button
-          type="button"
-          name="good"
-          className={s.btn}
-          onClick={onLeaveFeedback}
-        >
-          good
-        </button>
-
-        <button
-          type="button"
-          name="neutral"
-          className={s.btn}
-          onClick={onLeaveFeedback}
-        >
-          neutral
-        </button>
-
-        <button
-          type="button"
-          name="bad"
-          className={s.btn}
-          onClick={onLeaveFeedback}
-        >
-          bad
-        </button>
-      </div>
-    </Fragment>
+    <ul className={s.btnContainer}>
+      {options.map((el) => (
+        <li key={el.id}>
+          <button
+            id={shortid.generate()}
+            type="button"
+            name={el}
+            className={s.btn}
+            onClick={onLeaveFeedback}
+          >
+            {el}
+          </button>
+        </li>
+      ))}
+    </ul>
   );
 }
 
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func,
+  optons: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ),
 };
