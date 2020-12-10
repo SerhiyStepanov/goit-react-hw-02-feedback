@@ -1,5 +1,5 @@
 import React from "react";
-import shortid from "shortid";
+
 import PropTypes from "prop-types";
 import s from "./Feedback.module.css";
 
@@ -7,13 +7,13 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <ul className={s.btnContainer}>
       {options.map((el) => (
-        <li key={el.id}>
+        <li key={el}>
           <button
-            id={shortid.generate()}
+            id={el}
             type="button"
             name={el}
             className={s.btn}
-            onClick={onLeaveFeedback}
+            onClick={() => onLeaveFeedback(el)}
           >
             {el}
           </button>

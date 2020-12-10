@@ -11,12 +11,10 @@ export default class App extends Component {
     bad: 0,
   };
 
-  increment = (e) => {
-    this.setState((prevState) => {
-      return {
-        [e.target.name]: prevState[e.target.name] + 1,
-      };
-    });
+  increment = (el) => {
+    this.setState((prevState) => ({
+      [el]: prevState[el] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
